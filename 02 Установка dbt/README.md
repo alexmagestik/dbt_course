@@ -295,7 +295,7 @@ dbt --version
 Жмем на "Find"
 ![image](https://github.com/user-attachments/assets/88904b50-34a9-4baa-a92d-1b4d2e6265dd)
 
-Находим папку с виртуальным окружением и внутри нее выбираем файл bin/activate и жмем "Select Interpreter"
+Находим папку с виртуальным окружением и внутри нее выбираем файл bin/python3 и жмем "Select Interpreter"
 ![image](https://github.com/user-attachments/assets/763b04d7-38de-4d0e-b542-568ef71348a0)
 
 Перезапустите VS Code
