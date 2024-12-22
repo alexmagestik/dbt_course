@@ -283,6 +283,21 @@ dbt --version
 Внутри папки с виртуальным окружением выбираем файл \Scripts\python.exe и жмем кнопку "Select interpreter"
 ![image](https://github.com/user-attachments/assets/bb631318-9156-437d-b7eb-a912f2dbbc6b)
 
+#### Шаг 3.3. Создать новое виртуальное окружение python
+##### На Windows
+
+##### На Mac OS
+В окне расширения "Python" жмем на плюсие в строке "Venv"
+![image](https://github.com/user-attachments/assets/01909362-0f6f-421d-b46a-dae5f0217b52)
+
+Жмем на версию python, в которой хотим создать виртуальное окружение
+![image](https://github.com/user-attachments/assets/3be1ed61-d0e6-44ee-9e96-524aa045fb6b)
+
+Виртуальное окружение появится в списке расширения "Python". Жмем на звезду рядом с расширением 
+![image](https://github.com/user-attachments/assets/39a4ebe2-2d8b-4cf4-b3a3-168024766112)
+
+
+
 #### Шаг 4. Проверяем корректность установки dbt в данной версии Python
 Жмем на значок "Консоли" рядом с версией pyhton, которую мы хотим использовать для работы и откроется окно Терминала
 ![image](https://github.com/user-attachments/assets/a510e2bd-068e-4a79-b2ce-395902724aae)
