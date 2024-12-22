@@ -259,9 +259,9 @@ dbt --version
 ![image](https://github.com/user-attachments/assets/906dc532-dcff-4d62-9663-a438a6d57075)
 
 #### Далее выбираем, что хотим сделать:
-* Выбрать установленную версию python и доустановить в нее dbt-postgres, если он не установлен
-* Открыть созданное ранее виртуальное окружение python
-* Создать новое виртуальное окружение python
+* Шаг 3.1 Выбрать установленную версию python и доустановить в нее dbt-postgres, если он не установлен
+* Шаг 3.2 Открыть созданное ранее виртуальное окружение python
+* Шаг 3.3 Создать новое виртуальное окружение python
  
 #### Шаг 3.1. Выбираем Python которая будет использована при работе с проектом
 ##### На Windows
@@ -275,9 +275,11 @@ dbt --version
 #### Шаг 3.2. Открыть созданное ранее виртуальное окружение python
 ##### На Windows
 Выбираем пункт "Enter enterpreter path"
+
 ![image](https://github.com/user-attachments/assets/da1ab8e0-c338-4951-be3c-914a4f8c0449)
 
 Жмем "Find"
+
 ![image](https://github.com/user-attachments/assets/3e6dfc88-56bf-4511-9c8e-3acd694f2dc1)
 
 Внутри папки с виртуальным окружением выбираем файл \Scripts\python.exe и жмем кнопку "Select interpreter"
