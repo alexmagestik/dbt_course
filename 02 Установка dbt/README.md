@@ -246,6 +246,13 @@ dbt --version
 ![image](https://github.com/user-attachments/assets/1c4eee73-c556-406d-b72a-de9afd213c24)
 
 #### Шаг 1. Открываем расширение Python
+##### На Windows
+Жмем комбинацию клавиш ctrl+shft+P.
+В открывшемся окне введите "Python: select interpreter".
+Нажмите на найденный пункт с соответствующим названием.
+![image](https://github.com/user-attachments/assets/f80152ad-7026-4ae6-930c-34f7e9789f36)
+
+##### На Mac OS
 ![image](https://github.com/user-attachments/assets/c91241b6-4626-4ca8-a0e0-0cc896b3c163)
 
 #### Шаг 2. Раскрываем список "Global" и видим все версии Python, установленные на ПК
