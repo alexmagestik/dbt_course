@@ -360,7 +360,21 @@ python -m pip install dbt-postgres
 python3 -m pip install dbt-postgres
 ````
 
+Если при установке возникает ошибка, то попробуйте использовать более младшую версию Python.
+
 Вновь выполним в окне терминала команду и теперь мы должны увидеть номер версии установленного dbt
 ````console
 dbt --version
 ````
+
+## Этап 14. Выбираем подсветку синтаксиса
+Открываем любой sql файл (можно создать).
+В правом нижнем углу редактора жмем на выбор языка подсветки.
+Жмем "Настройка сопоставления файлов для .sql"
+
+![image](https://github.com/user-attachments/assets/533c57b3-f3e1-4cd4-ac41-96851b5b188d)
+
+Вводим "Jinja SQL" и выбираем выпавший пункт
+
+![image](https://github.com/user-attachments/assets/b3db17c9-eb8d-4f3e-beea-141b08e23186)
+
