@@ -280,12 +280,8 @@ dbt --version
 Жмем "Find"
 ![image](https://github.com/user-attachments/assets/3e6dfc88-56bf-4511-9c8e-3acd694f2dc1)
 
-Выбираем папку с виртуальный окружением python и жмем кнопку "Select interpreter"
-![image](https://github.com/user-attachments/assets/e6ea1212-e808-40cc-be7d-14c7660070a1)
-
+Внутри папки с виртуальным окружением выбираем файл \Scripts\python.exe и жмем кнопку "Select interpreter"
 ![image](https://github.com/user-attachments/assets/bb631318-9156-437d-b7eb-a912f2dbbc6b)
-
-
 
 #### Шаг 4. Проверяем корректность установки dbt в данной версии Python
 Жмем на значок "Консоли" рядом с версией pyhton, которую мы хотим использовать для работы и откроется окно Терминала
