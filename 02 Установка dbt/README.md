@@ -306,9 +306,23 @@ dbt --version
 
 #### Шаг 3.3. Создать новое виртуальное окружение python и выбрать его использование по умолчанию в проекте
 ##### На Windows
+Жмем на пункт "Create virtual environment"
+![image](https://github.com/user-attachments/assets/564d32b8-430d-464f-a0dd-20d58a9cf7fe)
+
+Выбираем venv
+![image](https://github.com/user-attachments/assets/153eea69-332e-48cf-b77a-3d6409cd2f1c)
+
+Выбираем "Delete and recreate" или "Create"
+![image](https://github.com/user-attachments/assets/95c51113-3e92-464c-bb72-7e982f3640ee)
+
+Выбираем версию python
+![image](https://github.com/user-attachments/assets/b6998893-778f-4989-86fb-1817ebc5f617)
+
+Ставим галочку рядом с файлом requirements и жмем ОК
+![image](https://github.com/user-attachments/assets/93427c14-9411-43fb-933c-01e4dfb36905)
 
 ##### На Mac OS
-В окне расширения "Python" жмем на плюсие в строке "Venv"
+В окне расширения "Python" жмем на плюс в строке "Venv"
 
 ![image](https://github.com/user-attachments/assets/01909362-0f6f-421d-b46a-dae5f0217b52)
 
