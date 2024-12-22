@@ -269,7 +269,7 @@ dbt --version
 ![image](https://github.com/user-attachments/assets/064267c4-126c-44d5-93f8-a2d3633d6ae1)
 
 ##### На Mac OS
-Для этого жмем на звездочку у выбранной версии
+Жмем на звездочку у выбранной версии
 ![image](https://github.com/user-attachments/assets/d51b2f93-b1ad-414e-a828-3cd4446ff4f3)
 
 
