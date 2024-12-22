@@ -272,6 +272,19 @@ dbt --version
 Жмем на звездочку у выбранной версии
 ![image](https://github.com/user-attachments/assets/d51b2f93-b1ad-414e-a828-3cd4446ff4f3)
 
+#### Шаг 3.2. Открыть созданное ранее виртуальное окружение python
+##### На Windows
+Выбираем пункт "Enter enterpreter path"
+![image](https://github.com/user-attachments/assets/da1ab8e0-c338-4951-be3c-914a4f8c0449)
+
+Жмем "Find"
+![image](https://github.com/user-attachments/assets/3e6dfc88-56bf-4511-9c8e-3acd694f2dc1)
+
+Выбираем папку с виртуальный окружением python и жмем кнопку "Select interpreter"
+![image](https://github.com/user-attachments/assets/e6ea1212-e808-40cc-be7d-14c7660070a1)
+
+![image](https://github.com/user-attachments/assets/bb631318-9156-437d-b7eb-a912f2dbbc6b)
+
 
 
 #### Шаг 4. Проверяем корректность установки dbt в данной версии Python
