@@ -283,6 +283,25 @@ dbt --version
 Внутри папки с виртуальным окружением выбираем файл \Scripts\python.exe и жмем кнопку "Select interpreter"
 ![image](https://github.com/user-attachments/assets/bb631318-9156-437d-b7eb-a912f2dbbc6b)
 
+##### На Mac OS
+Открываем расширение "Python" и жмем на плюсик в строке "Venv"
+![image](https://github.com/user-attachments/assets/802649ab-3ec8-4e51-a2b2-cc5ce11ddb59)
+
+Выбираем "Enter enterpreter path"
+![image](https://github.com/user-attachments/assets/b5995093-4c28-4474-b1e3-b981349898ca)
+
+Жмем на "Find"
+![image](https://github.com/user-attachments/assets/88904b50-34a9-4baa-a92d-1b4d2e6265dd)
+
+Находим папку с виртуальным окружением и внутри нее выбираем файл bin/activate и жмем "Select Interpreter"
+![image](https://github.com/user-attachments/assets/763b04d7-38de-4d0e-b542-568ef71348a0)
+
+Перезапустите VS Code
+
+В расширении "Python" во вкладке "Venv" вы должны увидеть строку с виртуальным окружением. Нажмиие на звезду в ее строке, чтобы выбрать это виртуальное окружение по умолчанию
+![image](https://github.com/user-attachments/assets/0f2e51c7-f2b3-4562-b7d6-2a06e0950ff5)
+
+
 #### Шаг 3.3. Создать новое виртуальное окружение python и выбрать его использование по умолчанию в проекте
 ##### На Windows
 
