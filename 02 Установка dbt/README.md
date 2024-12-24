@@ -40,6 +40,7 @@ python3 -m venv dbt-env
 Активируем виртуальное окружение при каждом открытии терминала командой:
 ````console
 # Windows
+Set-ExecutionPolicy RemoteSigned
 dbt-env\Scripts\activate
 ````
 ````console
