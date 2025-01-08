@@ -9,3 +9,15 @@ CREATE FOREIGN TABLE demo_src.bookings (
 )
 SERVER demo_pg
 OPTIONS (schema_name 'bookings', table_name 'bookings');
+
+DROP FOREIGN TABLE demo_src.tickets;
+
+CREATE FOREIGN TABLE demo_src.tickets (
+	ticket_no bpchar(13) OPTIONS(column_name 'ticket_no') NOT NULL,
+	book_ref varchar(8) OPTIONS(column_name 'book_ref') NOT NULL,
+	passenger_id varchar(20) OPTIONS(column_name 'passenger_id') NOT NULL,
+	passenger_name text OPTIONS(column_name 'passenger_name') NOT NULL,
+	contact_data jsonb OPTIONS(column_name 'contact_data') NULL
+)
+SERVER demo_pg
+OPTIONS (schema_name 'bookings', table_name 'tickets');
