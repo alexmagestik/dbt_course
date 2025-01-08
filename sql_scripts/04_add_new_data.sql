@@ -1,3 +1,4 @@
+-- выполняется в БД источника, то есть БД demo
 
 create or replace procedure bookings.add_data()
 as $$
