@@ -1,8 +1,8 @@
 {{
-  config(
-    materialized = 'table'
+    config(
+        materialized = 'view',
     )
-}} 
+}}
 SELECT 
     ticket_no, 
     flight_id, 
