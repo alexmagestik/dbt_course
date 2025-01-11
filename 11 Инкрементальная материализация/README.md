@@ -1,6 +1,6 @@
 ### Оригинальный код модели stg_flights__bookings.sql
 
-```jinja
+```sql
 {{
     config(
         materialized = 'table',
