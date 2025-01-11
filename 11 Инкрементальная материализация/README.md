@@ -37,7 +37,7 @@ WHERE
 {% endif %}
 ```
 
-#### Код модели с инкрементальным обновлением по стратегии append staging/fligths/stg_flights__bookings_merge.sql
+#### Код модели с инкрементальным обновлением по стратегии merge staging/fligths/stg_flights__bookings_merge.sql
 
 ```sql
 {{
@@ -60,4 +60,33 @@ FROM
 WHERE 
     book_date > (SELECT MAX(book_date) FROM {{ source('demo_src', 'bookings') }}) - interval '97 day'
 {% endif %}
+```
+
+#### Код модели с инкрементальным обновлением по стратегии delete+insert staging/fligths/stg_flights__bookings_delete_insert.sql
+
+```sql
+{{
+    config(
+        materialized = 'incremental',
+        incremental_strategy = 'delete+insert',
+        unique_key = ['book_ref'],
+        tags = ['bookings']
+    )
+}}
+SELECT
+    book_ref,
+    book_date,
+    total_amount
+FROM
+    {{ source('demo_src', 'bookings') }}
+{% if is_incremental() %}
+WHERE 
+    book_date > (SELECT MAX(book_date) FROM {{ source('demo_src', 'bookings') }}) - interval '97 day'
+{% endif %}
+```
+
+#### Код запуска обновления всех моделей stg_flights__bookings с разным типом материализации
+
+```console
+dbt build --select 'tag:bookings'
 ```
