@@ -1,4 +1,26 @@
-#### Первоначальное содержимое файла city_region.csv
+#### Первоначальное содержимое файла seeds/dictionaries/city_region.csv
+
+```csv
+city,region
+Анапа,Краснодарский край
+Геленджик,Краснодарский край
+Грозный,Чеченская Республика
+Казань,Республика Татарстан
+Калуга,Калужская область
+```
+
+#### Запуск загрузки seed
+```console
+dbt seed
+```
+
+#### Дополнительные команды
+```console
+dbt run --select city_region #обновление всех моделей, зависящих от сида city_region
+dbt build --select city_region #обновление всех моделей, зависящих от сида city_region, вместе с сидом
+dbt seed --select city_region #обновление только сида city_region
+```
+
 ```csv
 city;region
 Анапа;Краснодарский край
