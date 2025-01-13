@@ -50,4 +50,23 @@ seeds:
           - unique
 ```
 
+#### Код модели models/staging/dictionaries/stg_dict__city_region.sql, получающей данные из сида
+```sql
+{{
+    config(
+        materialized = 'table',
+    )
+}}
+SELECT
+    city,
+    region
+FROM
+    {{ ref('city_region') }}
+```
 
+#### Дополнение файла dbt_project.yml
+```yml
+seeds:
+  dbt_course_practice:
+    schema: seeds
+```
