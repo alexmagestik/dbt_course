@@ -16,9 +16,9 @@ dbt seed
 
 #### Дополнительные команды
 ```console
-dbt run --select city_region #обновление всех моделей, зависящих от сида city_region
-dbt build --select city_region #обновление всех моделей, зависящих от сида city_region, вместе с сидом
-dbt seed --select city_region #обновление только сида city_region
+dbt run --select city_region # обновление всех моделей, зависящих от сида city_region
+dbt build --select city_region # обновление всех моделей, зависящих от сида city_region, вместе с сидом
+dbt seed --select city_region # обновление только сида city_region
 ```
 
 ```csv
