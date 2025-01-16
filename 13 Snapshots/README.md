@@ -29,6 +29,11 @@ seeds:
           - unique
 ```
 
+#### Код сборки seed
+```console
+dbt seed
+```
+
 #### Создает snapshot с сопоставлением регионов и городов snapshots/dictionaries/snap_city_region.sql
 
 ```sql
@@ -51,6 +56,38 @@ SELECT
     updated_at
 FROM 
     {{ ref('city_region') }}
+
+{% endsnapshot %}
+```
+
+#### Код создания Snapshot snapshots/fligths/dim_fligths__airports.sql
+
+```sql
+{% snapshot dim_fligths__airports %}
+
+{{
+    config(
+        target_schema='snapshot',
+        unique_key='airport_code',
+
+        strategy='check',
+        check_cols = ['airport_name', 'city', 'coordinates', 'timezone'],
+
+        snapshot_meta_column_names={
+            "dbt_valid_from": "dbt_effective_date_from",
+            "dbt_valid_to": "dbt_effective_date_to"
+        }
+   )
+}}
+
+SELECT
+    airport_code,
+    airport_name,
+    city,
+    coordinates,
+    timezone
+FROM
+    {{ ref('stg_flights__airports') }}
 
 {% endsnapshot %}
 ```
