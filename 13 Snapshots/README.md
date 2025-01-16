@@ -60,7 +60,7 @@ FROM
 {% endsnapshot %}
 ```
 
-#### Код создания Snapshot snapshots/fligths/dim_fligths__airports.sql
+#### Код создания Snapshot snapshots/fligths/dim_fligths__airports.sql со стратегией обновления check
 
 ```sql
 {% snapshot dim_fligths__airports %}
