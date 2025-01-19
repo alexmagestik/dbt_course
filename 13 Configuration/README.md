@@ -63,3 +63,31 @@ models:
           owner: finance_team
         quote: false
 ```
+
+```yml
+name: 'dbt_course_practice'
+version: '1.0.0'
+
+profile: 'dbt_course_practice'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:        
+  - "target"
+  - "dbt_packages"
+
+models:
+  dbt_course_practice:
+    +meta:
+      owner: "@vladamelin"
+      year_created: 2025
+
+seeds:
+  dbt_course_practice:
+    schema: seeds
+```
