@@ -20,3 +20,46 @@ select
 from
     {{ ref('stg_flights__bookings') }}
 ```
+
+models/intermediate/fligths/_int_fligths__models.yml
+```yml
+models:
+  - name: fct_bookings
+    description: Факты бронирований
+    docs:
+      show: true
+      node_color: red
+    latest_version: 1
+    versions:
+      - v: 1
+    config:
+      contract: {enforced: true}
+    **meta:
+      owner: "amelinvd@gmail.com"
+      contact_tg: vladamelin
+      status: in_dev**
+    
+    columns:
+      - name: book_ref
+        description: Идентификатор бронирования
+        data_type: varchar(8)
+        constraints:
+          - type: not_null
+        tags:
+          - "fact"
+          - "fligths"
+      - name: book_date
+        description: Дата Бронирования
+        data_type: timestamptz
+      - name: total_amount
+        description: Сумма бронирования
+        data_type: numeric(10, 2)
+        constraints:
+        - type: check
+          expression: "total_amount > 0"
+        tests:
+          - not_null
+        meta:
+          owner: finance_team
+        quote: false
+```
