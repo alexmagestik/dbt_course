@@ -34,10 +34,10 @@ models:
       - v: 1
     config:
       contract: {enforced: true}
-    meta:
-      owner: "amelinvd@gmail.com"
-      contact_tg: vladamelin
-      status: in_dev
+      meta:
+        owner: "amelinvd@gmail.com"
+        contact_tg: vladamelin
+        status: in_dev
     
     columns:
       - name: book_ref
