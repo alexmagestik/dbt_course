@@ -1,3 +1,4 @@
+analyses/cancelled_fligths_mirniy.sql:
 ```sql
 SELECT  
     scheduled_departure::date as scheduled_departure,
@@ -9,4 +10,9 @@ WHERE
     AND status = 'Cancelled'
 GROUP BY
     scheduled_departure::date
+```
+
+Команда компиляции:
+```bash
+dbt compile --select cancelled_fligths_mirniy
 ```
