@@ -83,7 +83,7 @@ FROM
 
 ```
 
-### for loop
+### For Loop
 
 ```sql
     {% for aircraft in important_aircrafts %}
