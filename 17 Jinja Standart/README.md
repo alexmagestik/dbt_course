@@ -38,9 +38,17 @@ as fligths_{{ aircraft }}
 as fligths_{{ aircraft|title|replace('73', 'oo') }} 
 ```
 
-###
+### Tests
 
 ```sql
+    {% for aircraft in important_aircrafts %}
+    SUM(CASE WHEN aircraft_code = '{{ aircraft }}' THEN 1 ELSE 0 END) as fligths_{{ aircraft|title|replace('73', 'oo') }} 
+        {%- if not loop['last'] %},{% endif %}
+        -- {% if aircraft is lower %} {{ aircraft }} — Да! ✅ {% else %} {{ aircraft }} — Нет! ❌ {% endif %}
+        -- {% if aircraft is upper %} {{ aircraft }} — Да! ✅ {% else %} {{ aircraft }} — Нет! ❌ {% endif %}
+        -- {% if aircraft is string %} {{ aircraft }} — Да! ✅ {% else %} {{ aircraft }} — Нет! ❌ {% endif %}
+        -- {% if aircraft is number %} {{ aircraft }} — Да! ✅ {% else %} {{ aircraft }} — Нет! ❌ {% endif %}
+    {%- endfor %}
 ```
 
 ###
