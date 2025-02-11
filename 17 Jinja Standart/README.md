@@ -31,3 +31,44 @@ loop.last
 loop['last']
 ```
 
+### Filters
+
+```sql
+as fligths_{{ aircraft }} 
+as fligths_{{ aircraft|title|replace('73', 'oo') }} 
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
+
+###
+
+```sql
+```
