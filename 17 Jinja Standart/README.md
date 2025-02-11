@@ -1,9 +1,4 @@
-### Variables
-
-```sql
-loop.last
-loop['last']
-```
+### Оригинальный код analyses/flights_by_aircraft.sql
 
 ```sql
 {% set aircraft_query %}
@@ -23,8 +18,16 @@ FROM
 SELECT 
     {% for aircraft in important_aircrafts %}
     SUM(CASE WHEN aircraft_code = '{{ aircraft }}' THEN 1 ELSE 0 END) as fligths_{{ aircraft }} 
-        {%- if not loop['last'] %},{% endif %}
+        {%- if not loop.last %},{% endif %}
     {%- endfor %}
 FROM
     {{ ref('fct_fligths') }}
 ```
+
+### Variables
+
+```sql
+loop.last
+loop['last']
+```
+
