@@ -83,9 +83,18 @@ FROM
 
 ```
 
-###
+### for loop
 
 ```sql
+    {% for aircraft in important_aircrafts %}
+    SUM(CASE WHEN aircraft_code = '{{ aircraft }}' THEN 1 ELSE 0 END) as fligths_{{ aircraft|title|replace('73', 'oo') }} 
+        {%- if not loop['last'] %},{% endif %}
+        -- {{ loop.index }}
+        -- {{ loop.index0 }}
+        -- {{ loop.previtem }}
+        -- {{ loop.nextitem }}
+        -- {{ loop.cycle('-', '+') }}
+    {%- endfor %}
 ```
 
 ###
