@@ -86,6 +86,55 @@ WHERE
 {% do adapter.drop_schema(api.Relation.create(database=target.database, schema="my_schema")) %}
 ```
 
+### adapter.get_missing_columns
+
+```sql
+{% set fct_fligths = api.Relation.create(
+      database="dwh_flight",
+      schema="intermediate",
+      identifier="fct_fligths",
+      type="table"
+    ) 
+%}
+
+{% set stg_flights__flights = api.Relation.create(
+      database="dwh_flight",
+      schema="intermediate",
+      identifier="stg_flights__flights",
+      type="table"
+    ) 
+%}
+
+{% for column in adapter.get_missing_columns(stg_flights__flights, fct_fligths) -%}
+  {{ "Column: " ~ column }}
+{% endfor %} 
+```
+
+### 
+
+```sql
+```
+
+### 
+
+```sql
+```
+
+### 
+
+```sql
+```
+
+### 
+
+```sql
+```
+
+### 
+
+```sql
+```
+
 ### 
 
 ```sql
