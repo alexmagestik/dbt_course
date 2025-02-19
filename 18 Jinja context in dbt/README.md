@@ -110,9 +110,34 @@ WHERE
 {% endfor %} 
 ```
 
-### 
+### adapter.expand_target_column_types
 
 ```sql
+{% set fct_fligths = api.Relation.create(
+        database = 'dwh_flight',
+        schema = 'intermediate',
+        identifier = 'fct_fligths',
+        type = 'table'
+    ) 
+%}
+
+{% set stg_flights__flights = api.Relation.create(
+        database = 'dwh_flight',
+        schema = 'intermediate',
+        identifier = 'stg_flights__flights',
+        type = 'table'
+    ) 
+%}
+
+{% do adapter.expand_target_column_types(stg_flights__flights, fct_fligths) %}
+
+{% for column in adapter.get_columns_in_relation(stg_flights__flights) %}
+    {{ 'Column: ' ~ column }}
+{%- endfor %} 
+
+{% for column in adapter.get_columns_in_relation(fct_fligths) %}
+    {{ 'Column: ' ~ column }}
+{%- endfor %} 
 ```
 
 ### 
