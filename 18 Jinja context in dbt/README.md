@@ -171,9 +171,10 @@ FROM
 
 ```
 
-### 
+### adapter.quote
 
 ```sql
+COUNT(*) as {{ adapter.quote('select some data') }}
 ```
 
 ### 
