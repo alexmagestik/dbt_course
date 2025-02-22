@@ -198,28 +198,3 @@ dbt_course_practice:
 export PGPORT=4001
 dbt build --select stg_flights__airports
 ```
-
-### 
-
-```sql
-```
-
-### 
-
-```sql
-```
-
-### 
-
-```sql
-```
-
-### 
-
-```sql
-```
-
-### 
-
-```sql
-```
