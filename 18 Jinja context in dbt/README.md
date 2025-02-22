@@ -177,9 +177,26 @@ FROM
 COUNT(*) as {{ adapter.quote('select some data') }}
 ```
 
-### 
+### Фильтра as_number + env_var
 
-```sql
+```yml
+dbt_course_practice:
+  outputs:
+    dev:
+      dbname: dwh_flight
+      host: localhost
+      pass: mysecretpassword
+      port: "{{ env_var('PGPORT') | as_number }}"
+      schema: intermediate
+      threads: 3
+      type: postgres
+      user: postgres
+  target: dev
+```
+
+```bash
+export PGPORT=4001
+dbt build --select stg_flights__airports
 ```
 
 ### 
