@@ -61,7 +61,43 @@ FROM
 {{ limit_data_dev('book_date') }}
 ```
 
-# Пример 3: удаление таблиц и представлений в БД, которым нет соответствующих model, seed и snapshot в dbt проекте
+# Пример 3: соединение значений из нескольких полей в одну строку
+
+### macros/utils.sql
+
+```sql
+{%- macro concat_columns(columns, delim = ', ') %}
+    {%- for column in columns -%}
+        {{ column }} {% if not loop.last %} || '{{ delim }}' || {% endif %}
+    {%- endfor -%}
+{% endmacro %}
+```
+
+### models/intermediate/fligths/fct_fligths.sql
+
+```sql
+{{
+    config(
+        materialized = 'table'
+    )
+}}
+select
+    flight_id, 
+    flight_no, 
+    scheduled_departure, 
+    scheduled_arrival, 
+    departure_airport, 
+    arrival_airport, 
+    status, 
+    aircraft_code, 
+    actual_departure, 
+    actual_arrival,
+    {{ concat_columns([ 'flight_id', 'flight_no' ]) }} as fligth_info
+from
+    {{ ref('stg_flights__flights') }}
+```
+
+# Пример 4: удаление таблиц и представлений в БД, которым нет соответствующих model, seed и snapshot в dbt проекте
 
 ### macros/utils.sql
 
