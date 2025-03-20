@@ -41,14 +41,23 @@ WHERE
 dbt compile --select aircrafts_with_flights
 ```
 
-### 
+### Генерация последовательности дат с помощью dbt_utils.date_spine
+#### analyses/generate_series.sql
 
 ```sql
+{{ dbt_utils.date_spine(
+    datepart="day",
+    start_date="cast('2019-01-01' as date)",
+    end_date="cast('2020-01-01' as date)"
+   )
+}}
 ```
 
-### 
+### Генерация последжовательности чисел с помощью dbt_utils.generate_series
+#### analyses/generate_series.sql
 
 ```sql
+{{ dbt_utils.generate_series(upper_bound=50) }}
 ```
 
 ### 
