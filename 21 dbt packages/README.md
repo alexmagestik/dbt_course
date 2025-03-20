@@ -60,14 +60,19 @@ dbt compile --select aircrafts_with_flights
 {{ dbt_utils.generate_series(upper_bound=50) }}
 ```
 
-### 
+### Получение текущего времени и даты с помощью dbt_utils.pretty_time()
+#### analyses/generate_series.sql
 
 ```sql
+{{ dbt_utils.pretty_time() }}
+{{ dbt_utils.pretty_time(format='%Y-%m-%d %H:%M:%S') }}
 ```
 
-### 
+###  Вывод в логи отформатированного сообщения с помощью dbt_utils.log_info
+#### analyses/generate_series.sql
 
 ```sql
+{{ dbt_utils.log_info("my pretty message") }}
 ```
 
 ### 
