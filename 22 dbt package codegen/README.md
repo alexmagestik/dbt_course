@@ -34,32 +34,21 @@ dbt run-operation codegen.generate_base_model --args "{source_name: 'demo_src', 
 ```
 
 
-### Использование 
-#### 
+### Генерация кода модели и сохранение в файл
 
-```sql
+```console
+dbt run-operation codegen.create_base_models --args '{source_name: "demo_src", tables: ["airports","aircrafts"]}'                               
 ```
 
-### Использование 
-#### 
+### Генерация yml файла с конфигурированием модели
+#### analyses/generate_model_yaml.sql
 
 ```sql
+{{ codegen.generate_model_yaml(
+    model_names=['fct_bookings', 'fct_fligths']
+) }}
 ```
 
-### Использование 
-#### 
-
-```sql
-```
-
-### Использование 
-#### 
-
-```sql
-```
-
-### Использование 
-#### 
-
-```sql
+```console
+dbt compile --select generate_model_yaml 
 ```
