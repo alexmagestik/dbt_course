@@ -1,28 +1,38 @@
-#### 
+#### Запуск обновления модели fct_bookings
 
 ```console
+dbt run --select fct_bookings
 ```
 
 #### 
 
-```console
+```console Запуск обновления моделей fct_bookings и fct_fligths и всех их предков
+dbt run --select "+fct_bookings +fct_fligths"
 ```
 
-#### 
+#### Обновление tickets_per_flights и его непосредственных родителей
 
 ```console
+dbt run --select "1+tickets_per_flights"
 ```
 
-#### 
+#### Обновление сида airline_worker и его непосредственных детей
 
 ```console
+dbt build --select "airline_worker+1"
 ```
 
-#### 
+#### Обновление сида airline_worker всех его потомков и всех предков всех потомков
 
 ```console
+dbt build --select "@airline_worker"
 ```
 
+#### Получение цепочки всех моделей, начинающейся с stg_flights__flights и заканчивающейся tickets_per_flights
+
+```console
+dbt run -s "stg_flights__flights+,+tickets_per_flights"
+```
 #### Поиск всех элементов, которые были изменены
 
 ```console
