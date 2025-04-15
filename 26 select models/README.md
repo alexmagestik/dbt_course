@@ -4,9 +4,9 @@
 dbt run --select fct_bookings
 ```
 
-#### 
+#### Запуск обновления моделей fct_bookings и fct_fligths и всех их предков
 
-```console Запуск обновления моделей fct_bookings и fct_fligths и всех их предков
+```console 
 dbt run --select "+fct_bookings +fct_fligths"
 ```
 
