@@ -22,58 +22,12 @@ python3 --version
 Вы должны увидеть сообщение похожее на:
 ![image](https://github.com/user-attachments/assets/1b714705-c91a-4905-b5c5-f2af08729317)
 
-
-## Этап 2. Установка dbt
-
-#### Шаг 1. Открыть окно терминала.
-
-#### Шаг 2. (выполните этот шаг, если вам может понадобится другая версия python и другой набор библиотек в работе) Создаем виртуальное окружение python, выполнив команду
-````console
-# Windows
-python -m venv dbt-env
-````
-````console
-# Mac OS
-python3 -m venv dbt-env
-````
-
-Активируем виртуальное окружение при каждом открытии терминала командой:
-````console
-# Windows
-Set-ExecutionPolicy RemoteSigned
-dbt-env\Scripts\activate
-````
-````console
-# Mac OS
-source dbt-env/bin/activate
-````
-
-#### Шаг 3. Устанавливаем dbt для работы с postgres
-
-````console
-# Windows
-python -m pip install dbt-postgres
-````
-при установке на Windows может понадобится дополнительно вызвать команду 
-````console
-python.exe -m pip install --upgrade pip
-````
-
-````console
-# Mac OS
-python3 -m pip install dbt-postgres
-````
-
-Если при установке возникает ошибка, то попробуйте:
-* Установить python более ранних версий (замечено, что есть проблемы с python 3.13.*, но на 3.12.* и 3.11.* устанавливается);
-* Установите postgresql локально;
-
-## Этап 3. Установка git, если не установлен
+## Этап 2. Установка git, если не установлен
 
 #### Шаг 1. Скачать дистрибутив с [официального сайта git](https://git-scm.com/downloads).
 #### Шаг 2. Установить git из скачанного дистрибутива.
 
-## Этап 4. Скачивание учебного проекта
+## Этап 3. Скачивание учебного проекта
 
 #### Шаг 1. Скачиваем код проекта
 Откройте терминал и перейдите в папку, в которую хотите скачать проект.
@@ -82,19 +36,19 @@ python3 -m pip install dbt-postgres
 git clone https://github.com/amelinvladimir/dbt_course.git
 ````
 
-## Этап 5. Установка DBeaver (если не установлен)
+## Этап 4. Установка DBeaver (если не установлен)
 
 Смотри в первом этапе [инструкции](https://github.com/amelinvladimir/sql_course/blob/main/%D0%A3%D1%80%D0%BE%D0%BA%201.2%20%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20%D0%9F%D0%9E/README.md)
 
 
-## Этап 6. Установка Docker Desktop (если не установлен)
+## Этап 5. Установка Docker Desktop (если не установлен)
 
 ### На Windows
 [Инструкция по установке](https://github.com/amelinvladimir/docker_course/blob/main/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20Docker%20%D0%BD%D0%B0%20Windows%2010/README.md)
 ### На Mac OS
 [Инструкция по установке](https://github.com/amelinvladimir/docker_course/blob/main/%D0%A3%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0%20Docker%20%D0%BD%D0%B0%20Mac%20OS/README.md)
 
-## Этап 7. Запуск контейнера с БД учебного проекта
+## Этап 6. Запуск контейнера с БД учебного проекта
 
 #### Шаг 1. Открыть терминал или powershell
 #### Шаг 2. Выполнить команду запуска образа
@@ -114,7 +68,7 @@ password: mysecretpassword
 ````
 Поставить галочку в поле "Показать все базы данных"
 
-## Этап 8. Создать файл profiles.yml с указанием параметров подключения к БД для dbt
+## Этап 7. Создать файл profiles.yml с указанием параметров подключения к БД для dbt
 
 #### Шаг 1. Открыть терминал или powershell
 #### Шаг 2. Создать файл profiles.yml, выполнив команду:
@@ -163,35 +117,9 @@ Ctrl + X # выйти
 ##### Для Windows
 Вставить текст в блокноте, сохранить и закрыть текстовый редактор.
 
-## Этап 9. Собрать dbt проект
-
-#### Шаг 1. Открыть терминал или powershell
-#### Шаг 2. Перейти в папку dbt_course/dbt_course/ проекта, скачанного с git
-
-Если выполнить команду 
-````console
-ls
-````
-Вы должны увидеть следующие папки и файлы
-````console
-README.md		dbt_project.yml		models			seeds			tests
-analyses		logs			package-lock.yml	snapshots
-dbt_packages		macros			packages.yml		target
-````
-#### Шаг 3. Запустить сборку проекта, выполнив команду
-````console
-dbt deps
-````
-и затем
-````console
-dbt build
-````
-
-Если установка прошла успешно, то вы увидите сообщение:
-![image](https://github.com/user-attachments/assets/dd6f8771-687f-4fb1-a1f8-7a038559050a)
 
 
-## Этап 10. Установка Visual Studio Code (VS Code), если не установлен
+## Этап 8. Установка Visual Studio Code (VS Code), если не установлен
 
 #### Шаг 1. Скачиваем дистрибутив с [сайта](https://code.visualstudio.com/) и запускаем установку.
 #### Шаг 2. При устанвоке оставляем все настройки по умолчанию (или делайте изменения по своему усмотрению).
@@ -203,7 +131,7 @@ dbt build
 
 ![image](https://github.com/user-attachments/assets/21c5c528-3d99-413a-a425-8699333b74ab)
 
-## Этап 11. Установить расширение "Power User for dbt" в Visual Code
+## Этап 9. Установить расширение "Power User for dbt" в Visual Code
 
 #### Шаг 1. Нажать на шестиренку в левом нижнем углу и выбрать пункт "Расширения"
 #### Шаг 2. В открывшейся строке поиска введите "Power User for dbt" и нажмите на соответствующий появившейся плагин. Нажмите "Установить"
@@ -215,7 +143,7 @@ dbt build
 
 #### Шаг 3. Если плагин запросит выбрать версию python, то выберите последнюю установленную версию.
 
-## Этап 12. Установить расширение "Power User for dbt" в Visual Code
+## Этап 10. Установить расширение "Python" в Visual Code
 
 #### Шаг 0. Проверка, установлено ли расширение
 Нажать на шестиренку и затем выбрать пункт "Расширения" ("Extensions").
@@ -231,20 +159,7 @@ dbt build
 #### Шаг 2. В открывшейся строке поиска введите "Python" и нажмите на соответствующий появившейся плагин. Нажмите "Установить" ("Install")
 Если вы не видите 
 
-## Этап 13. Выбираем версию python для работы с проектом, в которой вы установили dbt-postgres (если будет открыто окно для выбора)
-
-#### Шаг 0. Проверка, нужно ли дополнительно настраивать python в VS Code
-
-Открываем терминал 
-![image](https://github.com/user-attachments/assets/ca1ef146-21ac-406d-94fa-cbd1c4742206)
-
-Выполняем команду 
-````console
-dbt --version
-````
-
-Если мы видим результат подобный этому, то следующие шаги нам выполнять не нужно
-![image](https://github.com/user-attachments/assets/1c4eee73-c556-406d-b72a-de9afd213c24)
+## Этап 11. Создать виртуальное окружение "Python" в Visual Code
 
 #### Шаг 1. Открываем расширение Python
 ##### На Windows
@@ -259,53 +174,7 @@ dbt --version
 Раскрываем список "Global" и видим все версии Python, установленные на ПК
 ![image](https://github.com/user-attachments/assets/906dc532-dcff-4d62-9663-a438a6d57075)
 
-#### Далее выбираем, что хотим сделать:
-* Шаг 3.1 Выбрать установленную версию python и доустановить в нее dbt-postgres, если он не установлен
-* Шаг 3.2 Открыть созданное ранее виртуальное окружение python
-* Шаг 3.3 Создать новое виртуальное окружение python
- 
-#### Шаг 3.1. Выбираем Python которая будет использована при работе с проектом
-##### На Windows
-Жмем на ту версию python, которую хотим использовать по умолчанию при работе с проектом
-![image](https://github.com/user-attachments/assets/064267c4-126c-44d5-93f8-a2d3633d6ae1)
-
-##### На Mac OS
-Жмем на звездочку у выбранной версии
-![image](https://github.com/user-attachments/assets/d51b2f93-b1ad-414e-a828-3cd4446ff4f3)
-
-#### Шаг 3.2. Открыть созданное ранее виртуальное окружение python
-##### На Windows
-Выбираем пункт "Enter enterpreter path"
-
-![image](https://github.com/user-attachments/assets/da1ab8e0-c338-4951-be3c-914a4f8c0449)
-
-Жмем "Find"
-
-![image](https://github.com/user-attachments/assets/3e6dfc88-56bf-4511-9c8e-3acd694f2dc1)
-
-Внутри папки с виртуальным окружением выбираем файл \Scripts\python.exe и жмем кнопку "Select interpreter"
-![image](https://github.com/user-attachments/assets/bb631318-9156-437d-b7eb-a912f2dbbc6b)
-
-##### На Mac OS
-Открываем расширение "Python" и жмем на плюсик в строке "Venv"
-![image](https://github.com/user-attachments/assets/802649ab-3ec8-4e51-a2b2-cc5ce11ddb59)
-
-Выбираем "Enter enterpreter path"
-![image](https://github.com/user-attachments/assets/b5995093-4c28-4474-b1e3-b981349898ca)
-
-Жмем на "Find"
-![image](https://github.com/user-attachments/assets/88904b50-34a9-4baa-a92d-1b4d2e6265dd)
-
-Находим папку с виртуальным окружением и внутри нее выбираем файл bin/python3 и жмем "Select Interpreter"
-![image](https://github.com/user-attachments/assets/763b04d7-38de-4d0e-b542-568ef71348a0)
-
-Перезапустите VS Code
-
-В расширении "Python" во вкладке "Venv" вы должны увидеть строку с виртуальным окружением. Нажмиие на звезду в ее строке, чтобы выбрать это виртуальное окружение по умолчанию
-![image](https://github.com/user-attachments/assets/0f2e51c7-f2b3-4562-b7d6-2a06e0950ff5)
-
-
-#### Шаг 3.3. Создать новое виртуальное окружение python и выбрать его использование по умолчанию в проекте
+#### Шаг 2. Создать новое виртуальное окружение python и выбрать его использование по умолчанию в проекте
 ##### На Windows
 Жмем на пункт "Create virtual environment"
 ![image](https://github.com/user-attachments/assets/564d32b8-430d-464f-a0dd-20d58a9cf7fe)
@@ -333,7 +202,28 @@ dbt --version
 Виртуальное окружение появится в списке расширения "Python". Жмем на звезду рядом с расширением 
 ![image](https://github.com/user-attachments/assets/39a4ebe2-2d8b-4cf4-b3a3-168024766112)
 
+#### Шаг 3. Устанавливаем dbt для работы с postgres
 
+Открываем терминал 
+![image](https://github.com/user-attachments/assets/ca1ef146-21ac-406d-94fa-cbd1c4742206)
+
+````console
+# Windows
+python -m pip install dbt-postgres
+````
+при установке на Windows может понадобится дополнительно вызвать команду 
+````console
+python.exe -m pip install --upgrade pip
+````
+
+````console
+# Mac OS
+python3 -m pip install dbt-postgres
+````
+
+Если при установке возникает ошибка, то попробуйте:
+* Установить python более ранних версий (замечено, что есть проблемы с python 3.13.*, но на 3.12.* и 3.11.* устанавливается);
+* Установите postgresql локально;
 
 #### Шаг 4. Проверяем корректность установки dbt в данной версии Python
 Перезапускаем VS Code.
@@ -368,7 +258,7 @@ python3 -m pip install dbt-postgres
 dbt --version
 ````
 
-## Этап 14. Выбираем подсветку синтаксиса
+## Этап 12. Выбираем подсветку синтаксиса
 Открываем любой sql файл (можно создать).
 В правом нижнем углу редактора жмем на выбор языка подсветки.
 Жмем "Настройка сопоставления файлов для .sql"
@@ -378,4 +268,3 @@ dbt --version
 Вводим "Jinja SQL" и выбираем выпавший пункт
 
 ![image](https://github.com/user-attachments/assets/b3db17c9-eb8d-4f3e-beea-141b08e23186)
-
