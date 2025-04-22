@@ -65,12 +65,28 @@ dbt build -s stg_flights__bookings --store-failures
 select * from "dwh_flight"."intermediate_dbt_test__audit"."stg_flights__bookings__bookref__length"
 ```
 
-#### 
+### В конфигурации теста указываем, что в случае отрицательного результата должна быть не ошибка, а предупреждение
 
-```console
+```sql
+{{
+    config(
+        severity = 'warn',
+    )
+}}
+SELECT
+    b.book_ref
+FROM
+    {{ ref('stg_flights__bookings') }} b
+    JOIN {{ ref('stg_fligths__tickets') }} t
+        ON b.book_ref = t.book_ref
+WHERE
+    length(b.book_ref) > 5
 ```
 
-#### 
+### У всех тестов проекта должно быть предупреждение, а не ошибка, в случае не корректного результата
+#### dbt_project.yml
 
-```console
+```sql
+tests:
+  +severity: 'warn'
 ```
