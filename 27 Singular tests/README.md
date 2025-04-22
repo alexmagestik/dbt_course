@@ -53,9 +53,10 @@ WHERE
     length(b.book_ref) > 5
 ```
 
-#### 
+### Запуск тест с сохранением результата в таблице в случае, если тест упадет
 
 ```console
+dbt build -s stg_flights__bookings --store-failures
 ```
 
 #### 
