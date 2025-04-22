@@ -44,11 +44,13 @@ dbt build -s "stg_fligths__tickets stg_flights__bookings"         # собира
 
 ```sql
 SELECT
-    book_ref
+    b.book_ref
 FROM
-    {{ ref('stg_flights__bookings') }}
+    "dwh_flight"."intermediate"."stg_flights__bookings" b
+    JOIN "dwh_flight"."intermediate"."stg_fligths__tickets" t
+        ON b.book_ref = t.book_ref
 WHERE
-    length(book_ref) > 5
+    length(b.book_ref) > 5
 ```
 
 #### 
