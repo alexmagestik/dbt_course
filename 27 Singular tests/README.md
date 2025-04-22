@@ -40,9 +40,15 @@ dbt test -s "stg_fligths__tickets stg_flights__bookings"          # запуск
 dbt build -s "stg_fligths__tickets stg_flights__bookings"         # собираем одной командой обе модели, от которых зависит тест
 ```
 
-#### 
+### Скомпилированный SQL код теста находится в файле tests/staging/flights/stg_flights__bookings__bookref__length.sql
 
-```console
+```sql
+SELECT
+    book_ref
+FROM
+    {{ ref('stg_flights__bookings') }}
+WHERE
+    length(book_ref) > 5
 ```
 
 #### 
