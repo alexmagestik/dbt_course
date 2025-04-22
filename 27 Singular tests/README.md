@@ -59,9 +59,10 @@ WHERE
 dbt build -s stg_flights__bookings --store-failures
 ```
 
-#### 
+#### Получение упавших записей
 
-```console
+```sql
+select * from "dwh_flight"."intermediate_dbt_test__audit"."stg_flights__bookings__bookref__length"
 ```
 
 #### 
