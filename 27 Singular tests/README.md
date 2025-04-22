@@ -1,4 +1,4 @@
-### Создаем первый singular тест
+### Создаем первый Singular тест
 #### tests/staging/flights/stg_flights__bookings__bookref__length.sql
 
 ```sql
