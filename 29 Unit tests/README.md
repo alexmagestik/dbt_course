@@ -66,8 +66,10 @@ unit_tests:
     model: fct_fligths
     given:
       - input: ref('stg_flights__flights')
-        rows:
-          - {scheduled_departure: 2017-09-01T09:25:00+00:00, actual_departure: }
+        format: csv
+        rows: |
+          scheduled_departure,actual_departure
+          2017-09-01T09:25:00+00:00,
     expect:
       rows:
           - {scheduled_departure: 2017-09-01T09:25:00+00:00, actual_departure: , flight_departure_delay: 0:00:00}
