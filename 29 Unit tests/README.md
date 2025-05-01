@@ -74,3 +74,72 @@ unit_tests:
       rows:
           - {scheduled_departure: 2017-09-01T09:25:00+00:00, actual_departure: , flight_departure_delay: 0:00:00}
 ```
+#### Запуск только unit тестов по модели fct_fligths
+
+```console
+dbt test -s "fct_fligths,test_type:unit"
+```
+
+### Тестирование инкрементальной модели
+#### models/staging/flights/stg_flights__bookings_append.sql
+
+```sql
+{{
+    config(
+        materialized = 'incremental',
+        incremental_strategy = 'append', 
+        tags = ['bookings']
+    )
+}}
+SELECT
+    book_ref,
+    book_date,
+    {{ kopeck_to_ruble('total_amount') }} as total_amount
+FROM
+    {{ source('demo_src', 'bookings') }}
+{% if is_incremental() %}
+WHERE 
+    {{ bookref_to_bigint('book_ref') }} > (SELECT MAX({{ bookref_to_bigint('book_ref') }}) FROM {{ this }})
+{% endif %} 
+```
+
+#### tests/staging/flights/unit_stg_flights__bookings_append.yml
+
+```yml
+unit_tests:
+  - name: test_append_one_new_row
+    description: "1 строка загружена в модель ранее. Во время обновления должна подгрузиться 1 новая строка с бОльшим bookref"
+    model: stg_flights__bookings_append
+    overrides:
+      macros:
+        is_incremental: true
+    given:
+      - input: source('demo_src', 'bookings')
+        rows:
+          - {book_ref: 00001F, book_date: 2017-01-02}
+      - input: this
+        rows:
+          - {book_ref: 00000F, book_date: 2017-01-01}
+    expect:
+      rows:
+        - {book_ref: 00001F, book_date: 2017-01-02}
+  - name: test_init_load_one_row
+    description: "загрузка одной строки при первой загрузке"
+    model: stg_flights__bookings_append
+    overrides:
+      macros:
+        is_incremental: false
+    given:
+      - input: source('demo_src', 'bookings')
+        rows:
+          - {book_ref: 00001F, book_date: 2017-01-02}
+    expect:
+      rows:
+        - {book_ref: 00001F, book_date: 2017-01-02}
+```
+
+#### Запуск тестов по модели stg_flights__bookings_append
+
+```console
+dbt test -s "stg_flights__bookings_append"
+```
