@@ -54,9 +54,15 @@ python3 -m pip install dbt-postgres
 ```
 
 #### Создаем Dockerfile
-```console
+```docker
 FROM apache/airflow:3.0.0
 
 COPY requirements.txt /
 RUN pip install --no-cache-dir -r /requirements.txt
+```
+
+#### Создаем requirements.txt
+```
+dbt-postgres==1.9.0
+astronomer-cosmos=1.10.0
 ```
