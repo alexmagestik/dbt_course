@@ -11,3 +11,11 @@ cd airflow
 ```console
 curl -LfO 'https://airflow.apache.org/docs/apache-airflow/3.0.0/docker-compose.yaml'
 ```
+
+#### Запускаем airflow в Docker
+```console
+docker compose up
+```
+
+#### Копируем папку с dbt проектом в папку dags, созданную в папке airflow. Даем название папке с dbt проектом: "dbt".
+
