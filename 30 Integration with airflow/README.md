@@ -66,3 +66,25 @@ RUN pip install --no-cache-dir -r /requirements.txt
 dbt-postgres==1.9.0
 astronomer-cosmos==1.10.0
 ```
+
+#### Удаляем docker контейнеры с airflow в Docker Desktop
+
+#### Запускаем airflow с новым образом
+
+```console
+docker compose up --build
+```
+
+#### Создаем подключение к postgres в airflow
+<img width="886" alt="image" src="https://github.com/user-attachments/assets/aa5e1dfe-78f6-4048-847d-a97cfc5cbfaa" />
+
+#### Добавляем контейнер с postgres в сеть с контейнерами airflow, если postgres запущен в docker
+
+```console
+docker network --help
+docker network connect --help
+docker container ls
+docker network ls
+docker network connect airflow_default dbt-course-postgres
+docker network inspect airflow_default
+```
