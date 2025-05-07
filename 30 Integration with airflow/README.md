@@ -52,3 +52,11 @@ python3 -m pip install dbt-postgres
   # image: ${AIRFLOW_IMAGE_NAME:-apache/airflow:3.0.0}
   build: .
 ```
+
+#### Создаем Dockerfile
+```console
+FROM apache/airflow:3.0.0
+
+COPY requirements.txt /
+RUN pip install --no-cache-dir -r /requirements.txt
+```
