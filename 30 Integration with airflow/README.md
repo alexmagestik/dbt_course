@@ -40,12 +40,12 @@ dbt --version
 ```
 
 #### Если dbt-postgres не установлен, то установите его запуском команды
-# Windows
+##### Windows
 python -m pip install dbt-postgres
 при установке на Windows может понадобится дополнительно вызвать команду
 
 python.exe -m pip install --upgrade pip
-# Mac OS
+##### Mac OS
 python3 -m pip install dbt-postgres
 
 #### Открываем в VSCode папку airflow
