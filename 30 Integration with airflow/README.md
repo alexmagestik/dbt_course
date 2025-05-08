@@ -126,3 +126,8 @@ my_cosmos_dag = DbtDag(
     default_args={"retries": 2},
 )
 ```
+#### В файле config/airflow.cfg правим параметр dagbag_import_timeout
+
+```cfg
+dagbag_import_timeout = 600.0
+```
