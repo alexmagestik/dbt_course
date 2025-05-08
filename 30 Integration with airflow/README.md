@@ -131,3 +131,5 @@ my_cosmos_dag = DbtDag(
 ```cfg
 dagbag_import_timeout = 600.0
 ```
+
+#### Перезапускаем airflow в docker
