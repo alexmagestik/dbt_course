@@ -1,4 +1,4 @@
--- сначала создаем БД dbt_course и открываем sql редактор в этой БД и выполняем дальнейший скрипт
+-- сначала создаем БД dwh_flight и открываем sql редактор в этой БД и выполняем дальнейший скрипт
 select * from pg_catalog.pg_available_extensions;
 
 create extension postgres_fdw;
